@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import {Route, IndexRoute} from 'react-router'
-import Main from '../views/Main';
-import Hello from '../views/hello'
+import Main from 'views/Main';
+import Hello from 'views/hello'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 /**
  * (路由根目录组件，显示当前符合条件的组件)
@@ -12,7 +13,9 @@ import Hello from '../views/hello'
 class Roots extends Component {
   render() {
     return (
-      <div>{this.props.children}</div>
+      <MuiThemeProvider>
+        {this.props.children}
+      </MuiThemeProvider>
     );
   }
 }

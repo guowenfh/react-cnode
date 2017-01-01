@@ -4,7 +4,6 @@ require('styles/App.scss');
 import React,{ Component } from 'react';
 import { Link } from 'react-router';
 let yeomanImage = require('../images/yeoman.png');
-
 class App extends Component {
       constructor(props) {
         super(props);
