@@ -15,6 +15,7 @@ class App extends Component {
         使用解构测试,asd
         <div className="notice">Please edit <code>src/components/Main.js</code> to get started!</div>
         <Link to='/hello'>toHello</Link>
+        <Link to='/login'>toLogin</Link>
       </div>
     );
   }
