@@ -1,6 +1,7 @@
 'use strict';
 import React, {Component} from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
+import localcache from '../lib/localcache';
 class Hello extends Component {
   constructor(props) {
     super(props);
@@ -9,6 +10,8 @@ class Hello extends Component {
   Touch(e){
     console.error(e);
     console.error(this);
+    localcache.set('aaa','asd');
+    console.error(localcache.get('aaa'))
   }
   render() {
     return (
