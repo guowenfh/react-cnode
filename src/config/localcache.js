@@ -3,33 +3,32 @@
  * 可以使用 sessionStorage, 保持当前的会话状态, 刷新也可以存在.
  * 但是关闭之后消失. 可以有更高安全性, 对客户端的存储压力也更小.
  */
-const localcache = { //本地缓存部分都在这里,
-  _sessionstorage: window.sessionStorage,
-  _localstorage: window.localStorage,
-  /**
-   * 判断是否存在storage 这个方法
-   */
-  _hasStorage() {
-    return this._sessionstorage || this._localstorage;
-  },
-  /**
-   * 返回一个类别
-   * @param{String} tp 类别 session/storage，默认 session
-   */
-  _getstorage(tp) {
-    return tp && tp === 'local' ? this._localstorage : this._sessionstorage;
-  },
 
+/**
+ * 判断是否存在storage 这个方法
+ */
+var _hasStorage = function() {
+    return window.sessionStorage || window.localStorage;
+};
+/**
+ * 返回一个类别
+ * @param{String} tp 类别 session/storage，默认 session
+ */
+var _getstorage = function(tp) {
+  return tp && tp === 'local' ? window.localStorage : window.sessionStorage;
+};
+
+const localcache = { //本地缓存部分都在这里,
   /**
    *  返回该类别下的所有数据
    * @param{String} tp 类别 session/storage，默认storage
    */
   getAll(tp) {
-    if (!this._hasStorage()) { return false; }
+    if (!_hasStorage()) { return false; }
     //这里没有做decode (decodeURIComponent) 处理, 我们假设我们拿的都是原数据, 我们需要的. 具体显示时各业务模块自己处理
-    var i, storage = this._getstorage(tp),
+    var storage = _getstorage(tp),
       data = {};
-    for (i in storage) {
+    for (let i in storage) {
       data[i] = this.get(i, tp);
     }
     return data;
@@ -41,8 +40,8 @@ const localcache = { //本地缓存部分都在这里,
    * @param{String} tp 类别 session/storage，默认storage
    */
   get(key, tp) {
-    if (!this._hasStorage()) { return false; }
-    var storage = this._getstorage(tp);
+    if (!_hasStorage()) { return false; }
+    var storage = _getstorage(tp);
     if (!key || !storage.getItem(key)) {
       return false;
     }
@@ -61,11 +60,10 @@ const localcache = { //本地缓存部分都在这里,
    * @param {String} tp    类别 session/storage，默认storage
    */
   set(key, value, tp) {
-    console.error(this);
-    if (!this._hasStorage() || !key || value === undefined) {
+    if (!_hasStorage() || !key || value === undefined) {
       return false;
     }
-    var storage = this._getstorage(tp);
+    var storage = _getstorage(tp);
     var val;
     if (typeof value === 'object') {
       // TODO 在缓存的json对象添加一个修改时间。
@@ -85,12 +83,12 @@ const localcache = { //本地缓存部分都在这里,
    * @param {String} tp  类别 session/storage，默认storage
    */
   remove(key, tp) {
-    if (!key || !this._hasStorage()) {
+    if (!key || !_hasStorage()) {
       return false;
     }
-    var s = this._getstorage(tp);
-    if (s.getItem(key)) {
-      s.removeItem(key);
+    var storage = _getstorage(tp);
+    if (storage.getItem(key)) {
+      storage.removeItem(key);
       return true;
     }
     return false;
@@ -102,12 +100,12 @@ const localcache = { //本地缓存部分都在这里,
    * @param {Object} isAll  是否删除所有
    */
   removeAll(tp, isAll) {
-    if (!this._hasStorage()) { return false; }
+    if (!_hasStorage()) { return false; }
     if (!isAll) {
-      return this._getstorage(tp).clear();
+      return _getstorage(tp).clear();
     }
-    this._sessionstorage.clear();
-    this._localstorage.clear();
+    window.localStorage.clear();
+    window.sessionStorage.clear();
     return true;
   }
 };
