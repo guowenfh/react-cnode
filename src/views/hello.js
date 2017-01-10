@@ -1,7 +1,8 @@
 'use strict';
 import React, {Component} from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
-import localcache from '../lib/localcache';
+import localcache from '../config/localcache';
+import DrawerUndockedExample from './sidebar';
 class Hello extends Component {
   constructor(props) {
     super(props);
@@ -19,6 +20,7 @@ class Hello extends Component {
         <h1>这里是hello组件!
         </h1>
         <RaisedButton label="Default"onTouchTap={this.Touch.bind(this)} />
+        <DrawerUndockedExample />
       </div>
     );
   }
