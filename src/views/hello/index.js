@@ -1,8 +1,8 @@
 'use strict';
 import React, {Component} from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
-import localcache from '../config/localcache';
-import DrawerUndockedExample from './sidebar';
+import localcache from '../../config/localcache';
+import DrawerUndockedExample from '../bottomBar';
 class Hello extends Component {
   constructor(props) {
     super(props);

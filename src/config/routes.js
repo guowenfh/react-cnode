@@ -1,8 +1,9 @@
-import React, {Component} from 'react';
+import React, {Component} from 'react'
 import {Route, IndexRoute} from 'react-router'
-import Main from 'views/Main';
+
+import HomePage from 'views/homePage' // 首页
 import Hello from 'views/hello'
-import Login from 'views/login/login'
+import Login from 'views/login'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 /**
@@ -22,8 +23,8 @@ class Roots extends Component {
 }
 const RouteConfig = (
   <Route path="/" component={Roots}>
-    <IndexRoute component={Main}/>
-    <Route path="/main" component={Main}/>
+    <IndexRoute component={HomePage}/>
+    <Route path="/index" component={HomePage}/>
     <Route path="/hello" component={Hello}/>
     <Route path="/login" component={Login}/>
   </Route>

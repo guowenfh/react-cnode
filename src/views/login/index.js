@@ -8,9 +8,20 @@ class Login extends Component {
     super(props);
     this.state = {};
   }
-  Touch(e) {
-    console.error(e);
-    console.error(this);
+  Touch() {
+    fetch('https://cnodejs.org/api/v1/topic/5433d5e4e737cbe96dcef312', {
+      method: 'get',
+      dataType: 'json'
+    })
+      .then(response => {
+        return response.json(); // => 返回一个 `Promise` 对象
+      })
+      .then(data => {
+        console.log(data); // 真正地数据结果
+      })
+      .catch(error => {
+        console.log(error);
+      });
   }
   render() {
     return (
