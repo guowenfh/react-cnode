@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import { RaisedButton } from 'material-ui';
 import { AppBar } from 'material-ui';
 import './login.scss';
-import DrawerUndockedExample from '../bottomBar';
 
 class Login extends Component {
   constructor(props) {
@@ -34,7 +33,6 @@ class Login extends Component {
         <RaisedButton label="Default" onTouchTap={ this
                                                      .Touch
                                                      .bind(this) } />
-        <DrawerUndockedExample />
       </div>
       );
   }
