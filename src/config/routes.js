@@ -7,7 +7,7 @@ import Login from 'views/login'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 /**
- * (路由根目录组件，显示当前符合条件的组件)
+ * 路由根目录组件，显示当前符合条件的组件
  *
  * @class Roots
  * @extends {Component}

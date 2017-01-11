@@ -1,8 +1,10 @@
 'use strict';
-import React, {Component} from 'react';
-import {RaisedButton} from 'material-ui';
-import {AppBar} from 'material-ui';
+import React, { Component } from 'react';
+import { RaisedButton } from 'material-ui';
+import { AppBar } from 'material-ui';
 import './login.scss';
+import DrawerUndockedExample from '../bottomBar';
+
 class Login extends Component {
   constructor(props) {
     super(props);
@@ -27,15 +29,14 @@ class Login extends Component {
     return (
       <div>
         <h1 className="login">这里是helDefaultlo组件!
-        </h1>
-        <AppBar title="Title" iconClassNameRight="muidocs-icon-navigation-expand-more"/>
-        <RaisedButton
-          label="Default"
-          onTouchTap={this
-          .Touch
-          .bind(this)}/>
+              </h1>
+        <AppBar title="Title" iconClassNameRight="muidocs-icon-navigation-expand-more" />
+        <RaisedButton label="Default" onTouchTap={ this
+                                                     .Touch
+                                                     .bind(this) } />
+        <DrawerUndockedExample />
       </div>
-    );
+      );
   }
 }
 export default Login

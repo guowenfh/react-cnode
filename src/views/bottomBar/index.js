@@ -9,12 +9,15 @@ class bottomBar extends Component {
   }
   render() {
     return (
-      <Tabs>
-        <Tab icon={ <ActionFlightTakeoff /> } />
-        <Tab icon={ <FontIcon className="material-icons">favorite</FontIcon> } />
-        <Tab icon={ <ActionFlightTakeoff /> } />
-        <Tab icon={ <ActionFlightTakeoff /> } />
-      </Tabs>
+      <div className="bottom-bar">
+        <Tabs>
+          <Tab icon={ <ActionFlightTakeoff /> } />
+          <Tab icon={ <FontIcon className="material-icons"> favorite </FontIcon> } />
+          <Tab icon={ <ActionFlightTakeoff /> } />
+          <Tab icon={ <ActionFlightTakeoff /> } />
+        </Tabs>
+      </div>
+
       );
   }
 }
