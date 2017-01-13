@@ -9,11 +9,11 @@ class TopBar extends Component {
     return (
       <div className="bottom-bar">
         <Tabs>
-          <Tab label="全部" onActive={()=>{hashHistory.push('/')}}/>
-          <Tab label="精华" onActive={()=>{hashHistory.push('/?tab=123')}}/>
-          <Tab label="分享" onActive={()=>{hashHistory.push('/?tab=213')}}/>
-          <Tab label="问答" onActive={()=>{hashHistory.push('/?tab=21312')}}/>
-          <Tab label="招聘" onActive={()=>{hashHistory.push('/?tab=21213')}}/>
+          <Tab label="全部" onActive={()=>{hashHistory.push('/?tab=all')}}/>
+          <Tab label="精华" onActive={()=>{hashHistory.push('/?tab=good')}}/>
+          <Tab label="分享" onActive={()=>{hashHistory.push('/?tab=share')}}/>
+          <Tab label="问答" onActive={()=>{hashHistory.push('/?tab=ask')}}/>
+          <Tab label="招聘" onActive={()=>{hashHistory.push('/?tab=job')}}/>
         </Tabs>
       </div>
 

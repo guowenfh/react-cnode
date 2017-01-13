@@ -4,15 +4,12 @@ import {List} from 'material-ui/List';
 import Tabbar from './tabBar';
 import ItemContent from './item';
 class ListMain extends Component {
-    constructor(props) {
-      super(props);
-      this.state = {open: false};
-    }
-  handleToggle = () => this.setState({open: !this.state.open});
-CLickc(){
-  console.error(this.props.router);
-}
+  constructor(props) {
+    super(props);
+  }
   render() {
+    var tab  = this.props.location.query.tab;
+    console.error(tab);
     return (
       <div style={{'paddingTop':'50px'}}>
         <Tabbar />

@@ -10,7 +10,6 @@ import Message from 'views/message'; // 消息
 const RouteConfig = (
 <Route path="/" component={ App }>
   <IndexRoute component={ List } />
-  <Route path="/list" component={ List } />
   <Route path="/login" component={ Login } />
   <Route path="/about" component={ About } />
   <Route path="/getstart" component={ Getstart } />

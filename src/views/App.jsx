@@ -3,7 +3,7 @@ import 'styles/App.scss';
 import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { Drawer, MenuItem } from 'material-ui';
-import {Link,IndexLink} from 'react-router';
+import {Link, IndexLink} from 'react-router';
 /**
  * 侧边栏
  *
