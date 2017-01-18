@@ -8,11 +8,9 @@
 function baseServer(query) {
   return {
     'server': 'cnode',
-    'url': 'https://cnodejs.org/api/v1' + (query.url || ''),
+    'url': /^(https?:)?\/\//i.test(query.url) ? query.url : 'https://cnodejs.org/api/v1' + (query.url || ''),
     'params': {
-      method: query.method || 'GET',
-      mode: 'same-origin',
-      dataType: 'json'
+      method: query.method || 'GET'
     }
   }
 }
@@ -23,15 +21,15 @@ const apiList = {
    */
   // 主题首页列表
   'get_topics': baseServer({
-    url: 'topics'
+    url: '/topics'
   }),
   // 主题详情
   'get_topic_details': baseServer({
-    url: 'topic'
+    url: '/topic'
   }),
   // 新建主题
   'post_topics': baseServer({
-    url: 'topics',
+    url: '/topics',
     method: 'POST'
   }),
   // 编辑主题
@@ -93,7 +91,7 @@ const apiList = {
   'post_message_mark_all': baseServer({
     url: '/message/mark_all',
     method: 'POST'
-  }),
+  })
 }
 
 module.exports = apiList

@@ -5,20 +5,21 @@
  */
 
 /**
- * 判断是否存在storage 这个方法
+ * 私有——判断是否存在storage 这个方法
  */
 var _hasStorage = function() {
     return window.sessionStorage || window.localStorage;
 };
 /**
- * 返回一个类别
+ * 私有——返回一个类别
  * @param{String} tp 类别 session/storage，默认 session
  */
 var _getstorage = function(tp) {
   return tp && tp === 'local' ? window.localStorage : window.sessionStorage;
 };
 
-const localcache = { //本地缓存部分都在这里,
+//本地缓存部分都在这里
+const localcache = {
   /**
    *  返回该类别下的所有数据
    * @param{String} tp 类别 session/storage，默认storage
