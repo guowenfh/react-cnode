@@ -26,10 +26,10 @@ var apiCall = (apiObject, params, success, fail) => {
   Object.assign(opts.params, apiObject.params, {
     body: params
   });
-  console.error(opts);
   if (/^get$/i.test(opts.params.method)) {
     opts.url += '?' + urlToString(opts.params.body);
   }
+  console.info(opts.url);
   fetch(opts.url, opts.params).then(res => {
     return res.json();
   }).then(data => {
