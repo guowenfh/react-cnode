@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import { List } from 'material-ui/List';
 import request from 'config/fetch';
 import Tabbar from './tabBar';
 import ItemContent from './item';
-class ListPage extends Component {
+class TopicsList extends Component {
   constructor(props) {
     super(props);
     this.state ={
@@ -64,4 +63,4 @@ class ListPage extends Component {
 
 
 
-export default ListPage;
+export default TopicsList;

@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { Drawer, MenuItem } from 'material-ui';
 import {Link, IndexLink} from 'react-router';
+
 /**
  * 侧边栏
  *
@@ -20,12 +21,29 @@ class Sidebar extends Component {
   handleClose = () => this.setState({
     open: false
   });
+  getCurrentQuery(){
+    var hash = window.location.hash;
+    hash = hash.replace('#','')
+    if(hash.indexOf('tab') === -1){
+      hash = '/?tab=all'
+    }
+    console.error(hash);
+    return hash;
+  }
+  shouldComponentUpdate(nextProps,nextState){
+    return (this.state.open !== nextState.open)
+  }
   render() {
     return (
-      <Drawer swipeAreaWidth={ 50 } docked={ false } width={ 200 } open={ this.state.open } onRequestChange={ (open) => this.setState({
-                                                                                                          open
-                                                                                                        }) }>
-        <MenuItem onTouchTap={ this.handleClose }><IndexLink to="/">首页</IndexLink></MenuItem>
+      <Drawer
+        swipeAreaWidth={ 50 }
+        docked={ false }
+        width={ 200 }
+        open={ this.state.open }
+        onRequestChange={ (open) => this.setState({
+          open
+        }) }>
+        <MenuItem onTouchTap={ this.handleClose }><IndexLink to={this.getCurrentQuery()}>首页</IndexLink></MenuItem>
         <MenuItem onTouchTap={ this.handleClose }><Link to="/getstart">新手入门</Link></MenuItem>
         <MenuItem onTouchTap={ this.handleClose }><Link to="/message"> 消息</Link></MenuItem>
         <MenuItem onTouchTap={ this.handleClose }><Link to="/login"> 登录</Link></MenuItem>

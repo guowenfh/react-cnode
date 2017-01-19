@@ -24,6 +24,7 @@ class TopBar extends Component {
     return this.props.tab !== nextProps.tab;
   }
   render() {
+    console.error(tabIndexState[this.props.tab] || 0);
     return (
       <div>
         <div style={tabBarStyle}>
