@@ -27,7 +27,6 @@ class Sidebar extends Component {
     if(hash.indexOf('tab') === -1){
       hash = '/?tab=all'
     }
-    console.error(hash);
     return hash;
   }
   shouldComponentUpdate(nextProps,nextState){

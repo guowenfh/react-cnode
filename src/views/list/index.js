@@ -18,15 +18,15 @@ class TopicsList extends Component {
         page: state.page || this.state.page,
         limit: 10 // 每一页字数
       }
-    }, res => {
+    }).then(res => {
       let _pagesList = this.state.pagesList;
       _pagesList = _pagesList.concat(res.data)
       this.setState({
         pagesList : _pagesList
       });
-    }, err => {
+    }).catch(err => {
       console.info(err);
-    })
+    });
   }
   initCurrentPage(){
     this.setState({
@@ -45,7 +45,6 @@ class TopicsList extends Component {
   }
   componentWillUpdate(nextProps,nextState){
     if((this.props.location.query.tab !== nextProps.location.query.tab) || (this.state.page !==nextState.page)){
-      console.info('info');
       this.getTocList(nextProps,nextState);
     }
   }
