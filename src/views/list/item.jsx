@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {List,ListItem} from 'material-ui/List';
 import Divider from 'material-ui/Divider';
 import Avatar from 'material-ui/Avatar';
-import { darkBlack,lightBlack } from 'material-ui/styles/colors';
+import { darkBlack } from 'material-ui/styles/colors';
 import {Link} from 'react-router';
 
 class ItemCard extends Component {
