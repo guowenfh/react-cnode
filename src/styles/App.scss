@@ -70,7 +70,12 @@ p, blockquote, ul, ol, dl, li, table, pre {
 	margin: 15px 0;
   word-break: break-word;
 }
-
+ul{
+  padding-left:20px;
+}
+ul ul{
+  padding-left:20px;
+}
 a, a:visited {
 	color: #4183C4;
 	background-color: inherit;
