@@ -51,15 +51,16 @@ var apiCall = (apiObject, params, success, fail) => {
  */
 var request = (options) =>{
   if (options.api) {
-    let apiObject = apiList[options.api];
+    // 粗略处理，因为对象的引用特性，这里需要执行一次拷贝，可优化
+    let apiObject = JSON.parse(JSON.stringify(apiList[options.api]));
     if (!apiObject) {
       return;
     }
-  // 这里是为了处理的特殊性。
-  options.url ? apiObject.url=(apiObject.url + options.url) : '';
-  return new Promise((resolve,reject)=>{
-    apiCall(apiObject, (options.params || {}), resolve, reject);
-  })
+    // 这里是为了处理的特殊性。
+    apiObject.url = options.url ? (apiObject.url + options.url) : apiObject.url;
+    return new Promise((resolve,reject)=>{
+      apiCall(apiObject, (options.params || {}), resolve, reject);
+    })
   }
 }
 window.request = request;
