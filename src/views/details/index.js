@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import request from 'config/fetch';
-
 class TopicsDetail extends Component {
   constructor(props) {
     super(props);

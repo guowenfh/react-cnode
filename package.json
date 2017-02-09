@@ -19,7 +19,12 @@
     "release:patch": "npm version patch && npm publish && git push --follow-tags"
   },
   "repository": "",
-  "keywords": ["react","material-ui","react-router","webpack"],
+  "keywords": [
+    "react",
+    "material-ui",
+    "react-router",
+    "webpack"
+  ],
   "author": "guowenfh",
   "devDependencies": {
     "babel-core": "^6.0.0",
@@ -65,7 +70,7 @@
   "dependencies": {
     "core-js": "^2.0.0",
     "material-ui": "^0.16.6",
-    "normalize.css": "^4.0.0",
+    "normalize.css": "^4.2.0",
     "react": "^15.0.0",
     "react-dom": "^15.0.0",
     "react-router": "^3.0.0",
