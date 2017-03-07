@@ -20,8 +20,10 @@ class Message extends Component {
           <buttom onClick={()=>{
             var that = this;
             this.setState({
-              reactJson:['div',{className:'ez-led',onClick:eval('()=>{that.setState({reactJson:["div",null]})}')},'Hello, React!',
-              React.createElement("div",{className:"ez-led"},"Hello, React!")]
+              reactJson:['div'
+              ,{className:'ez-led',
+              onClick:eval('()=>{that.setState({reactJson:["div",null]})}')},'Hello, React!',
+              React.createElement("div",{className:"ez-led",style:{color:'#fff000'}},"Hello, React!")]
             })
           }}>
             按钮
