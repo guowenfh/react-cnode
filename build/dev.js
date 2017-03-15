@@ -2,10 +2,12 @@
 'use strict';
 const webpack = require('webpack');
 const WebpackDevServer = require('webpack-dev-server');
-const config = require('../webpack.config');
-
+const config = require('../cfg/dev.js');
+let env= process.env.NODE_ENV && process.env.NODE_ENV.trim()==='dist' ? 'dist':'dev';
+process.env.REACT_WEBPACK_ENV = env;
+console.error(config)
 /**
- * Flag indicating whether webpack compiled for the first time.
+ * 标志指示是否首次webpack编译。
  * @type {boolean}
  */
 let isInitialCompilation = true;
