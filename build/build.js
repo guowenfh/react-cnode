@@ -1,7 +1,7 @@
 /*eslint no-console:0 */
 'use strict';
 const webpack = require('webpack');
-const config = require('../cfg/dist.js');
+const config = require('../build/webpack.base.conf.js');
 
 webpack(config, function (err, stats) {
   if (err) throw err
