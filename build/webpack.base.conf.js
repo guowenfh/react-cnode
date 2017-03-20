@@ -25,12 +25,12 @@ var entry = [
   './src/index.js'
 ];
 //设置开发时源代码映射工具
-const devTool = __DEV__ ? 'cheap-module-eval-source-map' : 'hidden-source-map';
+// const devTool = __DEV__ ? 'cheap-module-eval-source-map' : 'hidden-source-map';
 //基本配置
 var config = {
   cache: false,
   entry,
-  devtool: devTool,
+  devtool: 'cheap-module-eval-source-map',
   //所有的出口文件，注意，所有的包括图片等本机被放置到了dist目录下，其他文件放置到static目录下
   output: {
     path: path.join(__dirname, '/../dist/assets'), //生成目录
@@ -40,17 +40,6 @@ var config = {
 
   //配置插件
   plugins: [
-    //自动分割Vendor代码
-    // new CommonsChunkPlugin({ name: 'vendors', filename: 'vendors.bundle.js', minChunks: Infinity }),
-    //定义环境变量
-    new webpack.DefinePlugin({
-      'process.env': {
-        //因为使用热加载，所以在开发状态下可能传入的环境变量为空
-        'NODE_ENV': JSON.stringify(NODE_ENV)
-      },
-      //判断当前是否处于开发状态
-      __DEV__: JSON.stringify(__DEV__)
-    }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
