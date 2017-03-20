@@ -1,9 +1,9 @@
 /*eslint no-console:0 */
 'use strict';
 const webpack = require('webpack');
-const config = require('./webpack.base.conf.js');
+const pordConfig = require('./webpack.prod.conf.js')();
 
-webpack(config, function (err, stats) {
+webpack(pordConfig, function (err, stats) {
   if (err) throw err
   process.stdout.write(stats.toString({
     colors: true,
