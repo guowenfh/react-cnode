@@ -10,7 +10,9 @@ new WebpackDevServer(webpack(devConfig), {
   // publicPath: `http://127.0.0.1:${PORT}/`,
   hot: true,
   historyApiFallback: true,
-  quiet: true,
+  inline:true,
+  compress: true,
+  // quiet: true,
   // noInfo: true,
   stats: {colors: true}
 }).listen(PORT, '127.0.0.1', function (err, result) {
