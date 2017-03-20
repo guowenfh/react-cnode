@@ -28,7 +28,7 @@ class TopBar extends Component {
       <div>
         <div style={tabBarStyle}>
           <Tabs initialSelectedIndex={tabIndexState[this.props.tab] || 0}>
-            <Tab label={<Link to='/?tab=all' style={{color: '#ddd'}} activeStyle={{color:'white'}}>新手入门</Link>}/>
+            <Tab label={<Link to='/?tab=all' style={{color: '#ddd'}} activeStyle={{color:'white'}}>新手入门1</Link>}/>
             <Tab label={<Link to='/?tab=good' style={{color: '#ddd'}} activeStyle={{color:'white'}}>精华</Link>}/>
             <Tab label={<Link to='/?tab=share' style={{color: '#ddd'}} activeStyle={{color:'white'}}>分享</Link>}/>
             <Tab label={<Link to='/?tab=ask' style={{color: '#ddd'}} activeStyle={{color:'white'}}>问答</Link>}/>
