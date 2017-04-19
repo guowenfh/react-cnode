@@ -21,6 +21,9 @@ module.exports =  function() {
         //判断当前是否处于开发状态
         __DEV__: JSON.stringify('development')
       }),
+      new webpack.HotModuleReplacementPlugin(),
+      new webpack.NamedModulesPlugin(),
+      new webpack.NoEmitOnErrorsPlugin(),
     ]
   })
 }

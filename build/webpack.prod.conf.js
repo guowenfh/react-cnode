@@ -7,7 +7,22 @@ const webpackMerge = require('webpack-merge');
 module.exports =  function() {
   return webpackMerge(baseConfig, {
     devtool: 'hidden-source-map',
+    entry:{
+      // ================================
+      // 框架 / 类库 分离打包
+      // ================================
+      vendor: [
+        'react',
+        'react-dom',
+        'material-ui',
+        'react-tap-event-plugin',
+        'react-router',
+      ]
+    },
     plugins: [
+      new webpack.optimize.CommonsChunkPlugin({
+          name: 'vendor' // 指定公共 bundle 的名字。
+      }),
       //定义环境变量
       new webpack.DefinePlugin({
         'process.env': {

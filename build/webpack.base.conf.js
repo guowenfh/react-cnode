@@ -5,13 +5,7 @@ var autoprefixer = require('autoprefixer');
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
-//获取命令行NODE_ENV环境变量,默认为development
-var NODE_ENV = process.env.NODE_ENV || 'development';
-
-//判断当前是否处于开发状态下
-var __DEV__ = NODE_ENV === 'development';
 const PORT = 3001;
-
 
 
 //定义入口变量
@@ -32,16 +26,7 @@ var config = {
     //   './src/index.js'
     // ]
     ,
-    // ================================
-    // 框架 / 类库 分离打包
-    // ================================
-    vendor: [
-      'react',
-      'react-dom',
-      'material-ui',
-      'react-tap-event-plugin',
-      'react-router',
-    ]
+
   },
   //所有的出口文件，注意，所有的包括图片等本机被放置到了dist目录下，其他文件放置到static目录下
   output: {
@@ -52,12 +37,6 @@ var config = {
 
   //配置插件
   plugins: [
-    new webpack.optimize.CommonsChunkPlugin({
-        name: 'vendor' // 指定公共 bundle 的名字。
-    }),
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NamedModulesPlugin(),
-    new webpack.NoEmitOnErrorsPlugin(),
     new webpack.LoaderOptionsPlugin({
       options: {
         context: '/',

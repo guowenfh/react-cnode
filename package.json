@@ -4,10 +4,10 @@
   "description": "react,material-ui,react-router,webpack",
   "main": "",
   "scripts": {
-    "start": "NODE_ENV=dev node build/dev.js ",
+    "start": "node build/dev.js ",
     "dev": "webpack-dashboard node build/dev.js",
-    "serve:dist": "NODE_ENV=dist node build/build.js ",
-    "dist": "npm run copy & NODE_ENV=dist node build/build.js",
+    "serve:dist": "node build/build.js ",
+    "dist": "npm run copy & node build/build.js",
     "lint": "eslint ./src",
     "copy": "copyfiles -f ./src/index.html ./src/favicon.ico ./dist",
     "clean": "rimraf dist/*"
