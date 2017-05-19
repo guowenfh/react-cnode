@@ -1,65 +1,45 @@
 import React, { Component } from 'react';
-import request from 'config/fetch';
-import Tabbar from './tabBar';
+import { Tabs, Tab } from 'material-ui/Tabs';
 import ItemContent from './item';
 class TopicsList extends Component {
   constructor(props) {
     super(props);
-    this.state ={
-      page: 1, // 页数
-      pagesList:[] // 数据列表
-    };
   }
-  getTocList(props,state) {
-    request({
-      api: 'get_topics',
-      params: {
-        tab : props.location.query.tab || 'all',
-        page: state.page || this.state.page,
-        limit: 10 // 每一页字数
-      }
-    }).then(res => {
-      let _pagesList = this.state.pagesList;
-      _pagesList = _pagesList.concat(res.data)
-      this.setState({
-        pagesList : _pagesList
-      });
-    }).catch(err => {
-      console.info(err);
-    });
+  state = {
+    tabActive:'all'
   }
-  initCurrentPage(){
+  handleChange = value => {
     this.setState({
-      page: 1, // 页数
-      pagesList:[] // 数据列表
-    })
-  }
-  componentWillMount() {
-    this.initCurrentPage();
-    this.getTocList(this.props,this.state);
-  }
-  componentWillReceiveProps(nextProps){
-    if(this.props.location.query.tab !== nextProps.location.query.tab){
-      this.initCurrentPage();
-    }
-  }
-  componentWillUpdate(nextProps,nextState){
-    if((this.props.location.query.tab !== nextProps.location.query.tab) || (this.state.page !==nextState.page)){
-      this.getTocList(nextProps,nextState);
-    }
+      tabActive: value
+    });
   }
   render() {
     return (
-      <div >
-        <Tabbar tab={this.props.location.query.tab}/>
-        <div className="index">
-          <ItemContent pagesList = {this.state.pagesList}/>
-        </div>
+        <div style={{display:'flex','flex':1}}>
+          <Tabs
+            value = {this.state.tabActive}
+            onChange={this.handleChange}
+            style={{position:'fixed',top:0,left:0}}
+            >
+            <Tab label="新手入门" value="all">
+              <ItemContent page="all"/>
+            </Tab>
+            <Tab label="精华" value="good">
+              <ItemContent page="good"/>
+            </Tab>
+            <Tab label="分享" value="share">
+              <ItemContent page="share"/>
+            </Tab>
+            <Tab label="问答" value="ask">
+              <ItemContent page="ask"/>
+            </Tab>
+            <Tab label="招聘" value="job">
+              <ItemContent page="job"/>
+            </Tab>
+          </Tabs>
       </div>
       );
   }
 }
-
-
 
 export default TopicsList;
