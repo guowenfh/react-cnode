@@ -15,11 +15,10 @@ class TopicsList extends Component {
   }
   render() {
     return (
-        <div style={{display:'flex','flex':1}}>
+        <div>
           <Tabs
             value = {this.state.tabActive}
             onChange={this.handleChange}
-            style={{position:'fixed',top:0,left:0}}
             >
             <Tab label="新手入门" value="all">
               <ItemContent page="all"/>

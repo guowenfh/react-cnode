@@ -1,10 +1,9 @@
 import 'normalize.css/normalize.css';
 import 'styles/App.scss';
 import React, { Component } from 'react';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { Drawer, MenuItem } from 'material-ui';
-import {Link, IndexLink} from 'react-router';
-
+import { Link } from 'react-router-dom';
+import List from './list/index';
 /**
  * 侧边栏
  *
@@ -36,7 +35,7 @@ class Sidebar extends Component {
         onRequestChange={ (open) => this.setState({
           open
         }) }>
-        <MenuItem onTouchTap={ this.handleClose }><IndexLink to='/'>首页</IndexLink></MenuItem>
+        <MenuItem onTouchTap={ this.handleClose }><Link to='/list'>首页</Link></MenuItem>
         <MenuItem onTouchTap={ this.handleClose }><Link to="/getstart">新手入门</Link></MenuItem>
         <MenuItem onTouchTap={ this.handleClose }><Link to="/message"> 消息</Link></MenuItem>
         <MenuItem onTouchTap={ this.handleClose }><Link to="/login"> 登录</Link></MenuItem>
@@ -58,14 +57,12 @@ class App extends Component {
   }
   render() {
     return (
-      <MuiThemeProvider>
         <div>
           <Sidebar/>
           <div className="container">
-            { this.props.children }
+            <List/>
           </div>
         </div>
-      </MuiThemeProvider>
       );
   }
 }

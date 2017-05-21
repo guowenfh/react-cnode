@@ -25,7 +25,7 @@ class TopicsDetail extends Component {
   getTopicsDetail(){
     request({
       api:'get_topic_details',
-      url:'/'+this.props.params.id
+      url:'/'+this.props.match.params.id
     }).then(res=>{
       this.setState({
         'id' : res.data.id,
@@ -48,6 +48,7 @@ class TopicsDetail extends Component {
     })
   }
   componentWillMount(){
+    console.error(this.props);
     this.getTopicsDetail();
   }
   render() {

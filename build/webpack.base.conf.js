@@ -70,22 +70,24 @@ var config = {
   },
   module: {
     rules: [{
-      test: /\.(js|jsx)$/,
-      // exclude: /(node_modules)/,
-      use: [
-        'babel-loader'
-      ]
-    }, {
+        test: /\.(js|jsx)$/,
+        use: ['babel-loader'],
+        exclude: /node_modules/,
+        include: resolve('src')
+      }, {
       test: /\.(scss|sass|css)$/,
       use: [
         'style-loader',
         'css-loader',
         'postcss-loader',
-        'sass-loader?outputStyle=expanded&sourceMap=true&sourceMapContents=true&includePaths[]=./node_modules'
+        'sass-loader' //?outputStyle=expanded&sourceMap=true&sourceMapContents=true&includePaths[]=./node_modules
       ]
     }, {
-      test: /\.(eot|woff|woff2|ttf|svg|png|jpe?g|gif|mp4|webm)(\?\S*)?$/,
-      loader: 'url-loader?limit=8192' //&name=assets/imgs/[hash].[ext]
+        test: /\.(png|jpg|gif|md)$/,
+        use: ['file-loader?limit=10000&name=[md5:hash:base64:10].[ext]']
+    }, {
+        test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+        use: ['url-loader?limit=10000&mimetype=image/svg+xml']
     }]
   }
 };

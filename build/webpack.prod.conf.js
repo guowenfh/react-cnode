@@ -16,7 +16,7 @@ module.exports =  function() {
         'react-dom',
         'material-ui',
         'react-tap-event-plugin',
-        'react-router',
+        'react-router-dom',
       ]
     },
     plugins: [

@@ -3,7 +3,7 @@ const webpack = require('webpack');
 const WebpackDevServer = require('webpack-dev-server');
 //默认是开发时配置
 const devConfig = require('./webpack.dev.conf.js')();
-const PORT  = 3001;
+const PORT  = 3333;
 new WebpackDevServer(webpack(devConfig), {
   //设置WebpackDevServer的开发目录
   contentBase: path.join(__dirname + '/../src'),

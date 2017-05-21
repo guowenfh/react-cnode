@@ -22,8 +22,6 @@ module.exports =  function() {
         __DEV__: JSON.stringify('development')
       }),
       new webpack.HotModuleReplacementPlugin(),
-      new webpack.NamedModulesPlugin(),
-      new webpack.NoEmitOnErrorsPlugin(),
     ]
   })
 }
