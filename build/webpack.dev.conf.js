@@ -10,6 +10,14 @@ const webpackMerge = require('webpack-merge');
 
 module.exports =  function() {
   return webpackMerge(baseConfig, {
+    entry:{ // 默认入口
+      app:[
+        'react-hot-loader/patch',
+        `webpack-dev-server/client?http://0.0.0.0:${3333}`,
+        'webpack/hot/only-dev-server',
+        './src/index.js'
+      ],
+    },
     devtool: 'cheap-module-eval-source-map',
     plugins: [
       //定义环境变量

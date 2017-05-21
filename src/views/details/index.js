@@ -41,16 +41,17 @@ class TopicsDetail extends Component {
         'author' : res.data.author,
         'is_collect' : res.data.is_collect
       })
-      console.error(res.data);
       this.refs.detailContent.innerHTML = res.data.content;
     }).catch(e=>{
       console.error(e);
     })
   }
   componentWillMount(){
-    console.error(this.props);
     this.getTopicsDetail();
   }
+  componentDidMount() {
+  }
+
   render() {
     return (
       <div>

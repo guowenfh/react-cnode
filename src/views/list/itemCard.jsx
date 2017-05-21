@@ -8,7 +8,9 @@ class ItemCard extends Component {
   render() {
     let {title,author,id,reply_count,visit_count}  = this.props;
     return (
-      <Link to={'/details/'+id}>
+      <Link to={{
+        pathname:`/details/${id}`,
+      }}>
         <ListItem
           leftAvatar={<Avatar src={author.avatar_url} />}
           primaryText={

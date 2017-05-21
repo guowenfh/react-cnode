@@ -26,7 +26,6 @@ var config = {
     //   './src/index.js'
     // ]
     ,
-
   },
   //所有的出口文件，注意，所有的包括图片等本机被放置到了dist目录下，其他文件放置到static目录下
   output: {

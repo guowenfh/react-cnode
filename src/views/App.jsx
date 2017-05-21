@@ -1,9 +1,7 @@
-import 'normalize.css/normalize.css';
-import 'styles/App.scss';
+
 import React, { Component } from 'react';
 import { Drawer, MenuItem } from 'material-ui';
 import { Link } from 'react-router-dom';
-import List from './list/index';
 /**
  * 侧边栏
  *
@@ -44,28 +42,4 @@ class Sidebar extends Component {
       );
   }
 }
-
-/**
- * 路由根目录组件，显示当前符合条件的组件
- *
- * @class App
- * @extends {Component}
- */
-class App extends Component {
-  constructor(props) {
-    super(props);
-  }
-  render() {
-    return (
-        <div>
-          <Sidebar/>
-          <div className="container">
-            <List/>
-          </div>
-        </div>
-      );
-  }
-}
-
-
-export default App;
+export default Sidebar;
