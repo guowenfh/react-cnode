@@ -15,7 +15,7 @@ const RouteConfig = () => (
     <div>
         <SideBar/>
         <div style={{ flex: 1}}>
-          <Route exact path="/list" component={ List } />
+          <Route exact path="/" component={ List } />
           <Route path="/Details/(:id)" component={ Details } />
           <Route path="/login" component={ Login } />
           <Route path="/about" component={ About } />

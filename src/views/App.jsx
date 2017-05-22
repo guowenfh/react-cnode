@@ -33,7 +33,7 @@ class Sidebar extends Component {
         onRequestChange={ (open) => this.setState({
           open
         }) }>
-        <MenuItem onTouchTap={ this.handleClose }><Link to='/list'>首页</Link></MenuItem>
+        <MenuItem onTouchTap={ this.handleClose }><Link to='/'>首页</Link></MenuItem>
         <MenuItem onTouchTap={ this.handleClose }><Link to="/getstart">新手入门</Link></MenuItem>
         <MenuItem onTouchTap={ this.handleClose }><Link to="/message"> 消息</Link></MenuItem>
         <MenuItem onTouchTap={ this.handleClose }><Link to="/login"> 登录</Link></MenuItem>

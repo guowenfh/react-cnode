@@ -60,6 +60,7 @@ var config = {
     alias: {
       'components': resolve('src/components'),
       'views': resolve('src/views'),
+      'reducers': resolve('src/redux/reducers'),
       'actions': resolve('src/redux/actions'),
       'stores': resolve('src/redux/stores'),
       'styles': resolve('src/styles'),

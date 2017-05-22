@@ -7,7 +7,7 @@ import { list } from './list';
 const rootReducer = combineReducers({
   routing: routerReducer,
   /* your reducers */
-  list, //导航相关
+  list,
 });
 
 export default rootReducer;
