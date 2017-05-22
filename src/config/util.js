@@ -101,7 +101,7 @@ function ajax(url, options = {}) {
   })
 }
 export default{
-  toQueryString:toQueryString,
-  parseQueryString:parseQueryString,
-  ajax:ajax
+  toQueryString,
+  parseQueryString,
+  ajax
 }

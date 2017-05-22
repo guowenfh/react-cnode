@@ -58,11 +58,10 @@ var config = {
       resolve('node_modules')
     ],
     alias: {
-      'actions': resolve('src/actions'),
       'components': resolve('src/components'),
       'views': resolve('src/views'),
-      'sources': resolve('src/sources'),
-      'stores': resolve('src/stores'),
+      'actions': resolve('src/redux/actions'),
+      'stores': resolve('src/redux/stores'),
       'styles': resolve('src/styles'),
       'config': resolve('src/config')
     }

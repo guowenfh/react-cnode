@@ -14,7 +14,7 @@ module.exports =  function() {
       app:[
         'react-hot-loader/patch',
         `webpack-dev-server/client?http://0.0.0.0:${3333}`,
-        'webpack/hot/only-dev-server',
+        // 'webpack/hot/only-dev-server',
         './src/index.js'
       ],
     },
